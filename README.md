@@ -80,4 +80,22 @@ switch (random.nextInt(2)) {
         }
  ````
 
--The last bug is the random int generator, which is not working properly, as now all it returns is: ```Your john/doe/mis2016@ie/edu```. 
+-The last bug is the random int generator, which is not working properly, as now all it returns is: ```Your john/doe/mis2016@ie/edu```. the solution for this is:
+```
+int i = 0;
+        int randomNum = random.nextInt(2) + 1;
+
+        switch (randomNum) {
+            case 0:
+                word = new StringBuffer("Y");
+                break;
+            case 1:
+                word = new StringBuffer("F");
+                break;
+            case 2:
+                word = new StringBuffer("T");
+                break;
+        }
+ ```
+ 
+
