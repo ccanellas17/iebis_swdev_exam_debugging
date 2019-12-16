@@ -64,5 +64,20 @@ switch (random.nextInt(3)) {
                 
         }
 ````
--The next bug is that eventhough now we can add have the initial letter (explained before), now it will just return the **case 2** scenario, always returning: ```Tour john/doe/mis2016@ie/edu```. This is beacuse the random generator in the ```switch```is not working properly.
 
+-The next bug is that eventhough now we can add have the initial letter (explained before), now it will just return the **case 2** scenario, always returning: ```Tour john/doe/mis2016@ie/edu```.  This is because is running all the time through all the cases until the last one (case2: "T"), this is because we need to add a break to each case, like this;
+````
+switch (random.nextInt(2)) {
+            case 0:
+                word = new StringBuffer("Y");
+                break;
+            case 1:
+                word = new StringBuffer("F");
+                break;
+            case 2:
+                word = new StringBuffer("T");
+                break;
+        }
+ ````
+
+-The last bug is the random int generator, which is not working properly, as now all it returns is: ```Your john/doe/mis2016@ie/edu```. 
