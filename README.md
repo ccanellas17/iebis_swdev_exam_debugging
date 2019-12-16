@@ -48,3 +48,21 @@ Scoring criteria:
 - 60%: Spot all the bugs
 - 20%: Fix all the bugs and push the proposed solution to your repository online
 - 20%: Explain the solved exercise in the README, in the best possible way
+
+## Solutions
+- One bug is the fact that when we run the code, the output is always: ```our john/doe/mis2016@ie/edu```, instead of randomly generating one of the three outputs. This is because it is not appending the first letter of the word. The thing is that when the case is generated, it wasn't actually appending the letter, this is because instead of using **" "**, which is used for setting the initial elements in a StringBuffer, it was actually using **' '**, which it was used to set the capacity of the stringBuffer, therefore, here we have the first solution to the bug:
+````
+switch (random.nextInt(3)) {
+            case 0:
+                word = new StringBuffer("Y");
+                
+            case 1:
+                word = new StringBuffer("F");
+                
+            case 2:
+                word = new StringBuffer("T");
+                
+        }
+````
+-The next bug is that eventhough now we can add have the initial letter (explained before), now it will just return the **case 2** scenario, always returning: ```Tour john/doe/mis2016@ie/edu```. This is beacuse the random generator in the ```switch```is not working properly.
+
